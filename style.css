@@ -118,4 +118,39 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  max
+  max-width: 480px;
+  background: #222;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+footer button {
+  flex: 1;
+  background: none;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.5rem 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+footer button:hover {
+  background: #333;
+  color: gold;
+}
+
+footer button.active {
+  background: #333;
+  color: gold;
+}
+
+footer button img {
+  margin-bottom: 4px;
+}
+
