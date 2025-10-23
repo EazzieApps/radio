@@ -16,7 +16,7 @@ body {
 
 /* === Header === */
 .radio-header {
-  background: linear-gradient(to right, #4b0082, #ff8c00);
+  background: linear-gradient(to right, #4b0082, #ff8c00); /* Indigo to amber */
   color: #fff;
   padding: 1.2rem 1rem;
   text-align: center;
