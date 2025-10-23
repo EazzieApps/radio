@@ -13,12 +13,12 @@ body {
   padding-bottom: 80px;
 }
 
-header {
+/* header {
   background: linear-gradient(to right, #ffb700, #ff6f00);
   color: white;
   padding: 1rem;
   text-align: center;
-}
+} */
 
 .time-weather {
   display: flex;
