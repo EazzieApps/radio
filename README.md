@@ -1,7 +1,7 @@
 # 📻 ThatPart Radio – Mobile Web App
 Welcome to the official mobile web app for ThatPart Radio, a community-powered station broadcasting from Cape Town, South Africa. This project blends live streaming, interactive features, and vibrant design to make radio accessible, empowering, and engaging for everyone.
 
-🌟 Features
+# 🌟 Features
 🎧 Live Stream Playback Tune in to ThatPart Radio anytime via embedded audio player.
 
 🎶 Now Playing Metadata Auto-refreshing display of currently playing track using Icecast JSON.
@@ -18,27 +18,31 @@ Welcome to the official mobile web app for ThatPart Radio, a community-powered s
 
 📱 Mobile-First Design Optimized for smartphones with a clean, responsive layout.
 
-📁 Project Structure
-Code
-├── index.html       # Main HTML layout
-├── style.css        # Tailored styles and animations
-├── script.js        # Interactivity, metadata fetch, and effects
-├── assets/          # Icons, images, and optional media
-🚀 Getting Started
-To run locally:
+# 📁 Project Structure
 
+├── index.html       # Main HTML layout
+
+├── style.css        # Tailored styles and animations
+
+├── script.js        # Interactivity, metadata fetch, and effects
+
+├── assets/          # Icons, images, and optional media
+
+# 🚀 Getting Started
+To run locally:
 Clone the repo:
 
-bash
 git clone https://github.com/yourusername/thatpart-radio-app.git
+
 cd thatpart-radio-app
+
 Open index.html in your browser.
 
-To deploy:
+# To deploy:
 
 Use platforms like Netlify, Replit, or GitHub Pages.
 
-🧠 Mission
+# 🧠 Mission
 ThatPart Radio is more than music — it’s a movement. We amplify local voices, promote tech literacy, and build digital confidence through accessible media. This app reflects our commitment to:
 
 Empowerment through education
@@ -49,10 +53,10 @@ Youth-led innovation
 
 Inclusive digital storytelling
 
-🤝 Contributing
+# 🤝 Contributing
 We welcome collaborators! Whether you’re a developer, designer, educator, or listener — your ideas matter.
 
-Fork the repo
+# Fork the repo
 
 Create your feature branch (git checkout -b feature/your-feature)
 
@@ -60,12 +64,13 @@ Commit your changes
 
 Push and open a pull request
 
-📬 Contact
+# 📬 Contact
+
 🌐 thatpart.radio12345.com
 
 📱 WhatsApp Chat
 
 🔗 @ThatPartRadioZA
 
-📄 License
+# 📄 License
 This project is open-source under the MIT License.
