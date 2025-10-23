@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThatPart Radio – News</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="smartphone">
+    <header>
+      <h1>📰 News & Headlines</h1>
+      <div class="time-weather">
+        <p id="time"></p>
+        <p id="weather">Sunny, 22°C in Cape Town</p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>SABC News</h2>
+        <ul>
+          <li><a href="https://www.sabcnews.com/sabcnews/" target="_blank">Visit SABC News for breaking stories</a></li>
+          <li>• Over 400,000 NSFAS applications received for 2026</li>
+          <li>• SADC offers mediation in Madagascar crisis</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>eNCA</h2>
+        <ul>
+          <li><a href="https://www.enca.com/" target="_blank">Visit eNCA for live updates</a></li>
+          <li>• Two teenagers shot dead in Westbury</li>
+          <li>• Lion escapes transporter in wild getaway</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>e.tv News</h2>
+        <ul>
+          <li><a href="https://www.etv.co.za/news" target="_blank">Visit e.tv News for latest coverage</a></li>
+          <li>• Maharaj takes 7 wickets in SA-Pakistan Test</li>
+          <li>• Witness A testifies in Madlanga Commission</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <button onclick="navigateTo('index')">
+        <img src="https://img.icons8.com/ios-filled/24/home.png" alt="Home">
+        <p>Home</p>
+      </button>
+      <button onclick="navigateTo('live')">
+        <img src="https://img.icons8.com/ios-filled/24/radio.png" alt="Live">
+        <p>Live</p>
+      </button>
+      <button onclick="navigateTo('settings')">
+        <img src="https://img.icons8.com/ios-filled/24/settings.png" alt="Settings">
+        <p>Settings</p>
+      </button>
+      <button onclick="navigateTo('news')">
+        <img src="https://img.icons8.com/ios-filled/24/news.png" alt="News">
+        <p>News</p>
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
