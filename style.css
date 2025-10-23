@@ -13,12 +13,12 @@ body {
   padding-bottom: 80px;
 }
 
-/* header {
+header {
   background: linear-gradient(to right, #ffb700, #ff6f00);
   color: white;
   padding: 1rem;
   text-align: center;
-} */
+}
 
 .time-weather {
   display: flex;
@@ -50,7 +50,7 @@ section {
   margin-bottom: 2rem;
 }
 
-button, header {
+button {
   background: #483e23;
   color: white;
   border: none;
@@ -62,12 +62,12 @@ button, header {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button, header:hover {
+button:hover {
   background: #5a472c;
   transform: scale(1.03);
 }
 
-footer {
+footer, header {
   position: fixed;
   bottom: 0;
   width: 100%;
