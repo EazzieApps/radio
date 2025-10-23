@@ -14,14 +14,32 @@ body {
 }
 
 header {
-  background: gold;
-  color: black;
+  background: linear-gradient(to right, #ffb700, #ff6f00);
+  color: white;
   padding: 1rem;
   text-align: center;
 }
 
 .time-weather {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.time-weather p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.time-weather p::before {
+  content: "🕒";
+}
+
+#weather::before {
+  content: "⛅";
 }
 
 main {
@@ -30,10 +48,6 @@ main {
 
 section {
   margin-bottom: 2rem;
-}
-
-.station-display {
-  margin: 1rem 0;
 }
 
 button {
@@ -45,29 +59,54 @@ button {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background: #5a472c;
   transform: scale(1.03);
-  transition: all 0.2s ease;
 }
 
-.station-list {
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(to right, #ffb700, #ff6f00);
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  z-index: 10;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.station-item {
+footer button {
   flex: 1;
+  background: none;
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.5rem 0;
 }
 
-.rotating-text span {
-  display: none;
+footer button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fffacd;
 }
-.rotating-text span.active {
-  display: inline;
+
+footer button.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fffacd;
+  font-weight: bold;
+}
+
+footer button img {
+  margin-bottom: 4px;
+  filter: brightness(0) invert(1);
 }
 
 .particles {
@@ -113,44 +152,3 @@ button:hover {
     transform: translateY(0);
   }
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 480px;
-  background: #222;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  z-index: 10;
-}
-
-footer button {
-  flex: 1;
-  background: none;
-  color: white;
-  font-size: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  padding: 0.5rem 0;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-footer button:hover {
-  background: #333;
-  color: gold;
-}
-
-footer button.active {
-  background: #333;
-  color: gold;
-}
-
-footer button img {
-  margin-bottom: 4px;
-}
-
