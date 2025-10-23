@@ -6,6 +6,13 @@ if (timeEl) {
     timeEl.textContent = now.toLocaleTimeString();
   }, 1000);
 }
+const currentPage = window.location.pathname.split("/").pop().replace(".html", "") || "index";
+document.querySelectorAll("footer button").forEach(btn => {
+  const label = btn.querySelector("p")?.textContent?.toLowerCase();
+  if (label && currentPage.includes(label)) {
+    btn.classList.add("active");
+  }
+});
 
 // Weather placeholder
 const weatherEl = document.getElementById("weather");
