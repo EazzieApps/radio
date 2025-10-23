@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ThatPart Radio App</title>
+  <title>ThatPart Radio – Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,17 +25,6 @@
         <span>Community Upliftment</span>
       </section>
 
-      <section class="current-station">
-        <h2>Live Station</h2>
-        <div class="station-display">
-          <p id="station-name">ThatPart Radio</p>
-          <p id="station-details">Empowerment, Tech & Community</p>
-        </div>
-        <button id="play-button">Listen Live</button>
-        <audio id="radio-audio" src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s1_22188_stream_993916339" type="audio/mpeg"></audio>
-        <p id="nowPlaying" class="text-teal-400 mt-2 text-sm">Now Playing: Streaming live...</p>
-      </section>
-
       <section class="stations">
         <h2>Popular Segments</h2>
         <div class="station-list">
@@ -43,11 +32,6 @@
           <button class="station-item">Mindset Mondays</button>
           <button class="station-item">Soulful Sundays</button>
         </div>
-      </section>
-
-      <section class="youtube-music">
-        <h2>🎵 Featured Tracks</h2>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
       </section>
 
       <section class="news">
@@ -58,25 +42,18 @@
           <li>Local artists featured on ThatPart Radio</li>
         </ul>
       </section>
-
-      <section class="contact">
-        <h2>📱 Contact Us</h2>
-        <p>WhatsApp: <a href="https://wa.me/27611234567">Chat with us</a></p>
-        <p>Stream: <a href="https://thatpart.radio12345.com">thatpart.radio12345.com</a></p>
-        <p>Follow: @ThatPartRadioZA</p>
-      </section>
     </main>
 
     <footer>
-      <button>
+      <button onclick="navigateTo('index')">
         <img src="https://img.icons8.com/ios-filled/24/home.png" alt="Home">
         <p>Home</p>
       </button>
-      <button>
+      <button onclick="navigateTo('live')">
         <img src="https://img.icons8.com/ios-filled/24/radio.png" alt="Live">
         <p>Live</p>
       </button>
-      <button>
+      <button onclick="navigateTo('settings')">
         <img src="https://img.icons8.com/ios-filled/24/settings.png" alt="Settings">
         <p>Settings</p>
       </button>
