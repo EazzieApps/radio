@@ -200,3 +200,38 @@ footer button img {
 .rotating-text span.active {
   display: inline;
 }
+/* === Header === */
+.radio-header {
+  background: linear-gradient(to right, #8e2de2, #ff8c00); /* Electric purple to amber */
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid #ff8c00;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.radio-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.radio-header .tagline {
+  font-size: 1rem;
+  color: #ffe4b5;
+  margin-top: 6px;
+  font-style: italic;
+  animation: pulseTagline 3s infinite ease-in-out;
+}
+
+.radio-header .date-display {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 500;
+  opacity: 0.85;
+}
