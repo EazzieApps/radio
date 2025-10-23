@@ -67,7 +67,7 @@ button:hover {
   transform: scale(1.03);
 }
 
-footer, header {
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
