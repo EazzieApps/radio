@@ -1,4 +1,4 @@
-// ⏰ Time display
+// Time display
 const timeEl = document.getElementById("time");
 if (timeEl) {
   setInterval(() => {
@@ -7,7 +7,13 @@ if (timeEl) {
   }, 1000);
 }
 
-// 🎧 Play/Pause toggle
+// Weather placeholder
+const weatherEl = document.getElementById("weather");
+if (weatherEl) {
+  weatherEl.textContent = "Sunny, 22°C in Cape Town";
+}
+
+// Play/Pause toggle
 const playButton = document.getElementById("play-button");
 const radioAudio = document.getElementById("radio-audio");
 
@@ -23,7 +29,7 @@ if (playButton && radioAudio) {
   });
 }
 
-// 🎶 Now Playing metadata
+// Now Playing
 const nowPlayingEl = document.getElementById("nowPlaying");
 if (nowPlayingEl) {
   async function fetchNowPlaying() {
@@ -40,7 +46,7 @@ if (nowPlayingEl) {
   setInterval(fetchNowPlaying, 15000);
 }
 
-// 💫 Ripple effect on buttons
+// Ripple effect
 document.querySelectorAll("button").forEach(button => {
   button.addEventListener("click", function (e) {
     const ripple = document.createElement("div");
@@ -63,81 +69,45 @@ document.querySelectorAll("button").forEach(button => {
   });
 });
 
-// 🔁 Rotating mission text
+// Rotating text
 const rotatingText = document.querySelector(".rotating-text");
 if (rotatingText) {
   const textElements = rotatingText.querySelectorAll("span");
   let currentIndex = 0;
-
   function rotateText() {
     textElements[currentIndex].classList.remove("active");
     currentIndex = (currentIndex + 1) % textElements.length;
     textElements[currentIndex].classList.add("active");
   }
-
   setInterval(rotateText, 3000);
 }
 
-// 🌌 Floating particles
+// Particles
 function createParticles() {
   const particlesContainer = document.querySelector(".particles");
   if (!particlesContainer) return;
-
-  const particleCount = 15;
-  for (let i = 0; i < particleCount; i++) {
+  for (let i = 0; i < 15; i++) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
-
-    const leftPos = Math.random() * 100;
-    const delay = Math.random() * 6;
-    const size = 2 + Math.random() * 4;
-    const duration = 4 + Math.random() * 8;
-
     particle.style.cssText = `
-      left: ${leftPos}%;
-      animation-delay: ${delay}s;
-      width: ${size}px;
-      height: ${size}px;
-      animation-duration: ${duration}s;
+      left: ${Math.random() * 100}%;
+      animation-delay: ${Math.random() * 6}s;
+      width: ${2 + Math.random() * 4}px;
+      height: ${2 + Math.random() * 4}px;
+      animation-duration: ${4 + Math.random() * 8}s;
       opacity: ${0.3 + Math.random() * 0.7};
     `;
-
     particlesContainer.appendChild(particle);
   }
 }
 createParticles();
 
-// 🧭 Navigation
+// Navigation
 function navigateTo(page) {
   window.location.href = `${page}.html`;
 }
 
-// 🌙 Theme toggle (on settings page)
-const themeToggle = document.getElementById("themeToggle");
-if (themeToggle) {
-  themeToggle.addEventListener("change", function () {
-    document.body.classList.toggle("dark-theme", this.checked);
-    document.body.style.transition = "background 1s ease";
-    setTimeout(() => {
-      document.body.style.transition = "";
-    }, 1000);
-  });
-}
-
-// ✨ Fade-in animation on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-fadeIn");
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll("section").forEach(el => {
-  observer.observe(el);
-});
-
-// Highlight active nav button
+// Highlight active nav
 const currentPage = window.location.pathname.split("/").pop().replace(".html", "") || "index";
 document.querySelectorAll("footer button").forEach(btn => {
   const label = btn.querySelector("p")?.textContent?.toLowerCase();
@@ -145,4 +115,3 @@ document.querySelectorAll("footer button").forEach(btn => {
     btn.classList.add("active");
   }
 });
-
