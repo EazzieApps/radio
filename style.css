@@ -1,3 +1,4 @@
+/* === Base Layout === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -13,19 +14,45 @@ body {
   padding-bottom: 80px;
 }
 
-header {
-  background: linear-gradient(to right, #ffb700, #ff6f00);
-  color: white;
+/* === Header === */
+.radio-header {
+  background: linear-gradient(to right, #1a1a1a, #333);
+  color: #f5c518;
   padding: 1rem;
   text-align: center;
+  border-bottom: 2px solid #f5c518;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+.radio-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.radio-header .tagline {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 4px;
+  font-style: italic;
+  animation: pulseTagline 3s infinite ease-in-out;
+}
+
+@keyframes pulseTagline {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+/* === Time & Weather === */
 .time-weather {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  color: #fff;
 }
 
 .time-weather p {
@@ -34,7 +61,7 @@ header {
   gap: 6px;
 }
 
-.time-weather p::before {
+#time::before {
   content: "🕒";
 }
 
@@ -42,6 +69,7 @@ header {
   content: "⛅";
 }
 
+/* === Sections === */
 main {
   padding: 1rem;
 }
@@ -50,6 +78,11 @@ section {
   margin-bottom: 2rem;
 }
 
+.station-display {
+  margin: 1rem 0;
+}
+
+/* === Buttons === */
 button {
   background: #483e23;
   color: white;
@@ -67,92 +100,7 @@ button:hover {
   transform: scale(1.03);
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 480px;
-  background: linear-gradient(to right, #ffb700, #ff6f00);
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  z-index: 10;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
-}
-
-footer button {
-  flex: 1;
-  background: none;
-  color: white;
-  font-size: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  padding: 0.5rem 0;
-}
-
-footer button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fffacd;
-}
-
-footer button.active {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fffacd;
-  font-weight: bold;
-}
-
-footer button img {
-  margin-bottom: 4px;
-  filter: brightness(0) invert(1);
-}
-
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: floatUp linear infinite;
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100vh); }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Footer Navigation */
+/* === Footer Navigation === */
 footer {
   position: fixed;
   bottom: 0;
@@ -195,25 +143,57 @@ footer button img {
   filter: brightness(0) invert(1);
 }
 
-/* Time & Weather */
-.time-weather {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+/* === Particles === */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.time-weather p {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.particle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: floatUp linear infinite;
 }
 
-#time::before {
-  content: "🕒";
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
 }
 
-#weather::before {
-  content: "⛅";
+/* === Ripple Effect === */
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* === Fade In Animation === */
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Rotating Text === */
+.rotating-text span {
+  display: none;
+}
+.rotating-text span.active {
+  display: inline;
 }
