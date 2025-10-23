@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThatPart Radio App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .smartphone {
+      max-width: 480px;
+      margin: auto;
+      position: relative;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: gold;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .time-weather {
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .station-display {
+      margin: 1rem 0;
+    }
+
+    button {
+      background: #483e23;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .station-list {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .station-item {
+      flex: 1;
+    }
+
+    .rotating-text span {
+      display: none;
+    }
+
+    .rotating-text span.active {
+      display: inline;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100vh); }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 480px;
+      background: #222;
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
+
+    footer button {
+      background: none;
+      color: white;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="smartphone">
+    <header>
+      <h1>🎧 ThatPart Radio</h1>
+      <div class="time-weather">
+        <p id="time"></p>
+        <p id="weather">Sunny, 22°C in Cape Town</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="rotating-text text-center">
+        <span class="active">Empowerment</span>
+        <span>Tech Literacy</span>
+        <span>Community Upliftment</span>
+      </section>
+
+      <section class="current-station">
+        <h2>Live Station</h2>
+        <div class="station-display">
+          <p id="station-name">ThatPart Radio</p>
+          <p id="station-details">Empowerment, Tech & Community</p>
+        </div>
+        <button id="play-button">Listen Live</button>
+        <audio id="radio-audio" src="https://uk18freenew.listen2myradio.com/live.mp3?typeportmount=s1_22188_stream_993916339" type="audio/mpeg"></audio>
+        <p id="nowPlaying" class="text-teal-400 mt-2 text-sm">Now Playing: Streaming live...</p>
+      </section>
+
+      <section class="stations">
+        <h2>Popular Segments</h2>
+        <div class="station-list">
+          <button class="station-item">Tech Tuesdays</button>
+          <button class="station-item">Mindset Mondays</button>
+          <button class="station-item">Soulful Sundays</button>
+        </div>
+      </section>
+
+      <section class="youtube-music">
+        <h2>🎵 Featured Tracks</h2>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+      </section>
+
+      <section class="news">
+        <h2>📰 Headlines</h2>
+        <ul>
+          <li>Cape Town signs 3-year tech monitor contract</li>
+          <li>Youth-led coding bootcamp launches in Delft</li>
+          <li>Local artists featured on ThatPart Radio</li>
+        </ul>
+      </section>
+
+      <section class="contact">
+        <h2>📱 Contact Us</h2>
+        <p>WhatsApp: <a href="https://wa.me/27611234567">Chat with us</a></p>
+        <p>Stream: <a href="https://thatpart.radio12345.com">thatpart.radio12345.com</a></p>
+        <p>Follow: @ThatPartRadioZA</p>
+      </section>
+    </main>
+
+    <footer>
+      <button>
+        <img src="https://img.icons8.com/ios-filled/24/home.png" alt="Home">
+        <p>Home</p>
+      </button>
+      <button>
+        <img src="https://img.icons8.com/ios-filled/24/radio.png" alt="Live">
+        <p>Live</p>
+      </button>
+      <button>
+        <img src="https://img.icons8.com/ios-filled/24/settings.png" alt="Settings">
+        <p>Settings</p>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    // Time
+    const timeEl = document.getElementById("time");
+    setInterval(() => {
+      const now = new Date();
+      timeEl.textContent = now.toLocaleTimeString();
+    }, 1000);
+
+    // Play button
+    document.getElementById("play-button").addEventListener("click", () => {
+      document.getElementById("radio-audio").play();
+    });
+
+    // Now Playing
+    async function fetchNowPlaying() {
+      try {
+        const res = await fetch("http://uk18freenew.listen2myradio.com:22188/status-json.xsl");
+        const data = await res.json();
+        const title = data.icestats.source.title;
+        document.getElementById("nowPlaying").textContent = "Now Playing: " + title;
+      } catch {
+        document.getElementById("nowPlaying").textContent = "Now Playing: Streaming live...";
+      }
+    }
+    fetchNowPlaying();
+    setInterval(fetchNowPlaying, 15000);
+
+    // Ripple effect
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function (e) {
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s ease-out;
+          top: ${e.offsetY}px;
+          left: ${e.offsetX}px;
+          margin-top: -50px;
+          margin-left: -50px;
+          pointer-events: none;
+        `;
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Rotating text
+    const rotatingText = document.querySelector('.rotating-text');
+    const textElements = rotatingText.querySelectorAll('span');
+    let currentIndex = 0;
+    function rotateText() {
+      textElements[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % textElements.length;
+      textElements[currentIndex].classList.add('active');
+    }
+    setInterval(rotateText, 3000);
+
+    // Particles
+    function createParticles() {
+      const particlesContainer = document.querySelector('.particles');
+      const particleCount = 15;
+      for (let i = 0; i < particleCount; i
