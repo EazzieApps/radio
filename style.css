@@ -152,3 +152,68 @@ footer button img {
     transform: translateY(0);
   }
 }
+/* Footer Navigation */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  z-index: 10;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer button {
+  flex: 1;
+  background: none;
+  color: #f5c518;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.5rem 0;
+}
+
+footer button:hover {
+  background: rgba(245, 197, 24, 0.1);
+  color: #fff;
+}
+
+footer button.active {
+  background: rgba(245, 197, 24, 0.2);
+  color: #fff;
+  font-weight: bold;
+}
+
+footer button img {
+  margin-bottom: 4px;
+  filter: brightness(0) invert(1);
+}
+
+/* Time & Weather */
+.time-weather {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.time-weather p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#time::before {
+  content: "🕒";
+}
+
+#weather::before {
+  content: "⛅";
+}
